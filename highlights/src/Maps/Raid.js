@@ -1,20 +1,21 @@
 import React from 'react'
-import ReactPlayer from 'react-player/youtube'
+import ReactPlayer from 'react-player/lazy'
 import { MapContainer, CircleMarker, ImageOverlay, Popup, ZoomControl } from 'react-leaflet'
+import RaidIMG from './Raid.jpg'
 import L from 'leaflet'
 
-function Map(props) {
+function Raid(props) {
 
   const data = props.data
   const bounds = [[0, 0], [1000, 2000]]
-  const style = { height: '75%', width: '75%' }
+  const style = { height: '100%', width: '100%' }
 
   return (
     <div id="mapid">
       <MapContainer crs={L.CRS.Simple} minZoom={-1} bounds={bounds} style={style} preferCanvas={true} attributionControl={false} maxZoom={2} zoomControl={false} doubleClickZoom={false} scrollWheelZoom={false}>
         <ImageOverlay
           bounds={bounds}
-          url={props.image}
+          url={RaidIMG}
         />
           {data.stats.points.map(point => (
             <CircleMarker
@@ -26,10 +27,9 @@ function Map(props) {
               color={'orange'}
             >
               <Popup closeButton={false}>
-                <ReactPlayer id="player" url={point[2]} controls={false} playing={true} loop={false}/>
+                <ReactPlayer id="player" url={point[2]} controls={false} playing={true} loop={false} stopOnUnmount={true}/>
               </Popup>
             </CircleMarker>
-              
           ))}
         
         <ZoomControl position="topright"/>
@@ -39,4 +39,4 @@ function Map(props) {
   );
 }
 
-export default Map;
+export default Raid;

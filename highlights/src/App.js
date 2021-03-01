@@ -1,23 +1,23 @@
-import {React, Component} from 'react'
-import Map from './map.js'
+import {React, Component, useRef} from 'react'
 import ReactDOM from 'react-dom'
-import Checkmate from './Maps/Checkmate.jpg'
-import Raid from './Maps/Raid.jpg'
-import Garrison from './Maps/Garrison.jpg'
-import Moscow from './Maps/Moscow.jpg'
-import Miami from './Maps/Miami.jpg'
+import Garrison from './Maps/Garrison.js'
+import Checkmate from './Maps/Checkmate.js'
+import Raid from './Maps/Raid.js'
+import Moscow from './Maps/Moscow.js'
+import Miami from './Maps/Miami.js'
+import Crossroads from './Maps/Crossroads.js'
 import './App.css'
 
 class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      Garrison: {},
-      Raid: {},
-      Miami: {},
-      Moscow: {},
-      Checkmate: {},
-      isLoaded: false,
+      GarrisonData: {},
+      RaidData: {},
+      MiamiData: {},
+      MoscowData: {},
+      CheckmateData: {},
+      CrossroadsData: {},
     };
   }
 
@@ -28,16 +28,19 @@ class App extends Component {
       fetch("http://localhost:8000/maps/Moscow"),
       fetch("http://localhost:8000/maps/Checkmate"),
       fetch("http://localhost:8000/maps/Miami"),
-    ]).then(([res1, res2, res3, res4, res5]) => {
-        return Promise.all([res1.json(), res2.json(), res3.json(), res4.json(), res5.json()])
+      fetch("http://localhost:8000/maps/Crossroads")
+    ]).then(([res1, res2, res3, res4, res5, res6]) => {
+        return Promise.all([res1.json(), res2.json(), res3.json(), res4.json(), res5.json(), res6.json()])
     })
-    .then(([res1, res2, res3, res4, res5]) => {
+    .then(([res1, res2, res3, res4, res5, res6]) => {
       this.setState({
-        Garrison: res1,
-        Raid: res2,
-        Moscow: res3,
-        Checkmate: res4,
-        Miami: res5,
+        isListOpen: false,
+        GarrisonData: res1,
+        RaidData: res2,
+        MoscowData: res3,
+        CheckmateData: res4,
+        MiamiData: res5,
+        CrossroadsData: res6,
       });
     });
   }
@@ -45,24 +48,27 @@ class App extends Component {
   getMap(request){
     switch(request){
       case "Checkmate":
-        ReactDOM.render(<Map data={this.state.Checkmate} image={Checkmate}/>, document.getElementById("Map"));
+        ReactDOM.render(<Checkmate data={this.state.CheckmateData}/>, document.getElementById("Map"));
+        break;
+      case "Crossroads":
+        ReactDOM.render(<Crossroads data={this.state.CrossroadsData}/>, document.getElementById("Map"));
         break;
       case "Miami":
-        ReactDOM.render(<Map data={this.state.Miami} image={Miami}/>, document.getElementById("Map"));
+        ReactDOM.render(<Miami data={this.state.MiamiData}/>, document.getElementById("Map"));
         break;
       case "Garrison":
-        ReactDOM.render(<Map data={this.state.Garrison} image={Garrison}/>, document.getElementById("Map"));
+        ReactDOM.render(<Garrison data={this.state.GarrisonData}/>, document.getElementById("Map"));
         break;
       case "Moscow":
-        ReactDOM.render(<Map data={this.state.Moscow} image={Moscow}/>, document.getElementById("Map"));
+        ReactDOM.render(<Moscow data={this.state.MoscowData}/>, document.getElementById("Map"));
         break;
       case "Raid":
-        ReactDOM.render(<Map data={this.state.Raid} image={Raid}/>, document.getElementById("Map"));
+        ReactDOM.render(<Raid data={this.state.RaidData}/>, document.getElementById("Map"));
         break;
       default:
         ReactDOM.render(<p>Data not found</p>, document.getElementById("Map"));
     }
-    
+
   }
 
   render(){
@@ -71,10 +77,16 @@ class App extends Component {
       <div className="container">
         <h1>CDL Highlight Tracker</h1>
         {/* make a dropdown */}
-        <div className="mapGrid">
+
+        <div id="mapGrid">
           <div className="mapItem" onClick={() => this.getMap("Checkmate")} >
             <div className="mapImage" style={{backgroundImage: "url('https://www.callofduty.com/cdn/app/base-maps/cw/mp_kgb.jpg')"}}>
             <div className="mapText">Checkmate</div>
+            </div>
+          </div>
+          <div className="mapItem" onClick={() => this.getMap("Crossroads")} >
+            <div className="mapImage" style={{backgroundImage: "url('https://www.callofduty.com/cdn/app/base-maps/cw/mp_tundra.jpg')"}}>
+            <div className="mapText">Crossroads</div>
             </div>
           </div>
           <div className="mapItem" onClick={() => this.getMap("Miami")}>

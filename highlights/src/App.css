@@ -24,10 +24,10 @@ body{
 }
 
 #Map{
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
-.mapGrid{
+#mapGrid{
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
