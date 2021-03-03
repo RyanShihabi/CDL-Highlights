@@ -3,8 +3,8 @@ const data = [
         "location": "Garrison",
         "stats": {
             "points": [
-                [520, 570, "https://www.youtube.com/watch?start=2979&end=2991&v=gWnckFjeIlc&feature=youtu.be&ab_channel=CallofDutyLeague"],
-                [680, 332, "https://www.youtube.com/watch?start=2979&end=2991&v=gWnckFjeIlc&feature=youtu.be&ab_channel=CallofDutyLeague"]
+                [850, 300, "https://www.youtube.com/watch?start=14&end=22&v=4rnj4nlB5WI&ab_channel=CallofDutyLeague"],
+                [1400, 300, "https://www.youtube.com/watch?start=31&end=39&v=4rnj4nlB5WI&ab_channel=CallofDutyLeague"]
             ],
         },
     },
@@ -13,6 +13,7 @@ const data = [
         "stats": {
             "points": [
                 [1520, 480, "https://www.youtube.com/watch?start=64&end=92&v=xkUxvxZx_EU&ab_channel=CallofDutyLeague"],
+                [1200, 650, "https://www.youtube.com/watch?start=57&end=67&v=4rnj4nlB5WI&ab_channel=CallofDutyLeague"]
             ],
         },
     },
@@ -39,6 +40,7 @@ const data = [
         "stats": {
             "points": [
                 [680, 200, "https://www.youtube.com/watch?start=166&end=175&v=xkUxvxZx_EU&ab_channel=CallofDutyLeague"],
+                [1000, 530, "https://www.youtube.com/watch?start=0&end=7&v=4rnj4nlB5WI&ab_channel=CallofDutyLeague"]
             ],
         },
     },

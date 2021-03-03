@@ -8,7 +8,7 @@ function Miami(props) {
 
   const data = props.data
   const bounds = [[0, 0], [1000, 2000]]
-  const style = { height: '100%', width: '100%' }
+  const style = { height: '100%', width: '90%' }
 
   return (
     <div id="mapid">

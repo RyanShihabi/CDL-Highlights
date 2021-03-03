@@ -1,4 +1,4 @@
-import {React, Component, useRef} from 'react'
+import {React, Component} from 'react'
 import ReactDOM from 'react-dom'
 import Garrison from './Maps/Garrison.js'
 import Checkmate from './Maps/Checkmate.js'
