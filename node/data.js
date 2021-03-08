@@ -3,7 +3,7 @@ const data = [
         "location": "Garrison",
         "stats": {
             "points": [
-                [850, 300, "https://www.youtube.com/watch?start=14&end=22&v=4rnj4nlB5WI&ab_channel=CallofDutyLeague"],
+                [850, 300, "https://www.youtube.com/watch?start=14&end=22&v=4rnj4nlB5WI&ab_channel=CallofDutyLeague", "Faze"],
                 [1400, 300, "https://www.youtube.com/watch?start=31&end=39&v=4rnj4nlB5WI&ab_channel=CallofDutyLeague"]
             ],
         },

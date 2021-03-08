@@ -75,7 +75,7 @@ class App extends Component {
 
     return (
       <div className="container">
-        <h1>CDL Highlight Tracker</h1>
+        <h1 id="siteTitle">CDL Highlight Tracker</h1>
         {/* make a dropdown */}
 
         <div id="mapGrid">

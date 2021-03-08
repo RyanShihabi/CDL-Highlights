@@ -1,5 +1,6 @@
 body{
-  font-family: "Call of Ops Duty", sans-serif;
+  font-family: Abolition, sans-serif;
+  letter-spacing: 5px;
   color: #fff;
 }
 
@@ -21,6 +22,10 @@ body{
 .container {
   width: 100%;
   text-align: center;
+}
+
+#siteTitle{
+  font-size: 50px;
 }
 
 #Map{
@@ -78,7 +83,8 @@ body{
   text-transform: uppercase;
   color: #fff;
   text-align: center;
-  text-shadow: 2px 2px #3a3838
+  text-shadow: 2px 2px #3a3838;
+  font-size: 25px;
 }
 
 

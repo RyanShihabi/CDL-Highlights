@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactPlayer from 'react-player/lazy'
 import CheckmateIMG from './Checkmate.jpg'
+import Faze from './../teams/ATL-FAZ_Alternate-Logo-2.svg'
+import Empire from './../teams/DAL_-_Empire.svg'
 import { MapContainer, CircleMarker, ImageOverlay, Popup, ZoomControl } from 'react-leaflet'
 import L from 'leaflet'
 
@@ -24,13 +26,13 @@ function Checkmate(props) {
                 point[0]
               ]}
               radius={50}
-              color={'orange'}
+              color={'white'}
             >
+              {/* <ImageOverlay bounds={[[point[1]-600, point[0]-600], [point[1]+50, point[0]+900]]} url={Faze}/> */}
               <Popup closeButton={false}>
                 <ReactPlayer id="player" url={point[2]} controls={false} playing={true} loop={false} stopOnUnmount={true}/>
               </Popup>
             </CircleMarker>
-              
           ))}
         
         <ZoomControl position="topright"/>

@@ -24,7 +24,7 @@ function Garrison(props) {
                 point[0]
               ]}
               radius={50}
-              color={'orange'}
+              color={'white'}
             >
               <Popup closeButton={false}>
                 <ReactPlayer id="player" url={point[2]} controls={false} playing={true} loop={false} stopOnUnmount={true}/>
