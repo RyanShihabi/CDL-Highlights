@@ -24,8 +24,9 @@ function Garrison(props) {
                 point[0]
               ]}
               radius={50}
-              color={'white'}
+              color={'transparent'}
             >
+              <ImageOverlay bounds={[[point[1]-100, point[0]-1000], [point[1]+100, point[0]+1000]]} url={point[3]}/>
               <Popup closeButton={false}>
                 <ReactPlayer id="player" url={point[2]} controls={false} playing={true} loop={false} stopOnUnmount={true}/>
               </Popup>
