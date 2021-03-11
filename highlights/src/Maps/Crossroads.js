@@ -8,7 +8,7 @@ function Crossroads(props) {
 
   const data = props.data
   const bounds = [[0, 0], [1000, 2000]]
-  const style = { height: '100%', width: '90%' }
+  const style = { height: '60%', width: '90%' }
 
   return (
     <div id="mapid">
