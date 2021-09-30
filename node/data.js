@@ -1,4 +1,4 @@
-// Server is for demo purposes
+// Server is for demo purposes, not actual layout
 
 const data = [
     {
