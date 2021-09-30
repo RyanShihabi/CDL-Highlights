@@ -1,3 +1,5 @@
+// Server is for demo purposes
+
 const data = [
     {
         "location": "Garrison",
